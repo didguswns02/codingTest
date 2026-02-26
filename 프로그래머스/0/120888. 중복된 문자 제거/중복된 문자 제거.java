@@ -1,15 +1,15 @@
+import java.util.Set;
+import java.util.LinkedHashSet;
+
 class Solution {
     public String solution(String my_string) {
-        String answer = "";
+        Set<String> set = new LinkedHashSet<>();
         String[] arr = my_string.split("");
-        for (int i = 0 ; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i].equals(arr[j])) {
-                    arr[j] = "";
-                }
-            }
-        }
+        String answer = "";
         for (String s : arr) {
+            set.add(s);
+        }
+        for (String s : set) {
             answer += s;
         }
         return answer;
